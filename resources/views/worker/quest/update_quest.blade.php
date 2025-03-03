@@ -7,6 +7,7 @@
                 <div class="card-body">
                     <form action="/quest/post-update/{{ $quest_detail->id }}" method="post" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="status" value="1">
                         <div class="form-group">
                             <label for="title" class="opacity-50">detail task title</label>
                             <input type="text" name="title" id="title" class="form-control"
@@ -16,18 +17,9 @@
                             <label for="description" class="opacity-50">detail task description</label>
                             <textarea name="desc" id="description" class="form-control" disabled>{{ $quest_detail->desc }}</textarea>
                         </div>
-                        <div class="form-group mb-2">
-                            <label for="status" class="opacity-50">status task description</label>
-                            <select name="status" id="status" class="form-select">
-                                <option value="0" {{ $quest_detail->status == 0 ? 'selected' : '' }}>belum selesai
-                                </option>
-                                <option value="1" {{ $quest_detail->status == 1 ? 'selected' : '' }}>selesai
-                                </option>
-                            </select>
-                        </div>
                         <div class="form-group">
                             <label for="image" class="opacity-50">Upload bukti</label>
-                            <input type="file" name="image" id="image" class="form-control" accept="image/*">
+                            <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
 
                             <div class="card mt-3">
                                 <div class="card-body d-flex justify-content-center">

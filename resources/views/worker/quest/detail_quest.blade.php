@@ -34,7 +34,7 @@
                         </tr>
                     @empty
                         <tr class="text-center">
-                            <td colspan="6">No task detail</td>
+                            <td colspan="6">No task</td>
                         </tr>
                     @endforelse
                 </tbody>
